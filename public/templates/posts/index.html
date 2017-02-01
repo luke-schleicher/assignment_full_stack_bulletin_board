@@ -1,3 +1,13 @@
+<form name="postForm" class="form-group" ng-submit="processPostForm()">
+  <label>Title</label>
+  <input type="text" name="title" class="form-control" ng-model="formData.title" required>
+  <label>Author</label>
+  <input type="text" name="title" class="form-control" ng-model="formData.author" required>
+  <label>Body</label>
+  <input type="text" name="title" class="form-control" ng-model="formData.body" required>
+  <input type="submit" class="btn btn-primary" value="Submit Post" ng-disabled="postForm.$invalid">
+</form>
+
 <section ng-repeat="post in posts">
   <div class="post">
     <div class="post-details">
