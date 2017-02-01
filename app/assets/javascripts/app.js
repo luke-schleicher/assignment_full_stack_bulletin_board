@@ -12,3 +12,16 @@ BulletinBoard.config(
       .headers
       .common['X-CSRF-Token'] = token;
   }]);
+
+BulletinBoard.config(function($stateProvider, $urlRouterProvider){
+
+  $urlRouterProvider.otherwise("/posts");
+
+  $stateProvider
+    .state('posts', {
+      url: "/posts",
+      templateUrl: "/templates/post.html",
+      controller: "PostsCtrl"
+    });
+
+});
