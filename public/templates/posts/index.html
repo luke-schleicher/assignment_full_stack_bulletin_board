@@ -8,7 +8,7 @@
   <input type="submit" class="btn btn-primary" value="Submit Post" ng-disabled="postForm.$invalid">
 </form>
 
-<section ng-repeat="post in posts">
+<section ng-repeat="post in posts | orderBy : '-created_at'">
   <div class="post">
     <div class="post-details">
       <a href="">{{ post.title }}</a><br>

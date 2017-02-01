@@ -17,6 +17,7 @@ BulletinBoard.controller('PostsIndexCtrl',
       postService.createPost($scope.formData)
         .then(function() {
           setPosts();
+          $scope.formData = {};
         })
     }
 
