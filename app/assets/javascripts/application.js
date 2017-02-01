@@ -12,4 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+
+//= require angular
+//= require angular_ui_router.min.js
+//= require lodash.min.js
+//= require restangular.min.js
+
 //= require_tree .
