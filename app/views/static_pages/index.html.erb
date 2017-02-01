@@ -2,11 +2,18 @@
   ng-app="BulletinBoard"
 <% end %>
 
-<div class="text-center" ui-view="header">
-</div>
+<div class="text-center" ui-view="header"></div>
 
-<div ui-view="recent-comments">
-</div>
+<a ui-sref="posts.index">Posts</a>
 
-<div ui-view="main">
+<div class="row">
+
+  <div class="col-xs-12 col-sm-5">
+    <div ui-view="recent-comments"></div>
+  </div>
+
+  <div class="col-xs-12 col-sm-7">
+    <div ui-view="main"></div>
+  </div>
+
 </div>

@@ -13,7 +13,7 @@ BulletinBoard.config(
 
 BulletinBoard.config(function($stateProvider, $urlRouterProvider){
 
-  $urlRouterProvider.otherwise("/posts");
+  $urlRouterProvider.otherwise("/posts/index");
 
   $stateProvider
     .state('posts', {
@@ -24,7 +24,7 @@ BulletinBoard.config(function($stateProvider, $urlRouterProvider){
         },
         'recent-comments': {
           templateUrl: '/templates/posts/recent_comments.html',
-          controller: 'RecentCommentsCtrl'
+          controller: 'CommentsIndexCtrl'
         },
         'main': {
           templateUrl: '/templates/posts/main.html'

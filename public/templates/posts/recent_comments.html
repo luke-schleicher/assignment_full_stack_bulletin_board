@@ -1,1 +1,17 @@
-Recent Comments Go Here  TODO
+<h2>Recent Comments</h2>
+
+<section ng-repeat="comment in comments">
+  <div class="comment">
+    <div class="vote">
+      <i class="glyphicon glyphicon-arrow-up"></i>
+      <i class="glyphicon glyphicon-arrow-down"></i>
+    </div>
+    <div class="comment-details">
+      <a href="">{{ comment.title }}</a><br>
+      Posted on {{ comment.created_at | date }} by {{ comment.author }}
+    </div>
+    <div class="comment-body">
+      {{ comment.body }}
+    </div>
+  </div>
+</section>

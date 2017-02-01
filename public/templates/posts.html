@@ -1,0 +1,6 @@
+<article ng-repeat="post in posts">
+  <div>
+    <a href="">{{ post.title }}</a>
+    Posted on {{ post.created_at | date }} by {{ post.author }}
+  </div>
+</article>

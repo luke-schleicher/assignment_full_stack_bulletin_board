@@ -9,16 +9,25 @@
 
 puts "Destroying posts"
 Post.destroy_all
+puts "Destroying comments"
+Comment.destroy_all
 
 NUM_POSTS = 5
+NUM_COMMENTS = 5
 
-
-puts "Creating posts"
+puts "Creating posts and comments"
 
 NUM_POSTS.times do |i|
-  Post.create({
+  post = Post.create({
       title: "Title #{i}",
       author: "Batman",
       body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolorem, natus labore sunt blanditiis. Esse, odit maxime nisi error eius. Possimus, temporibus dicta? Quam cum ducimus, in asperiores vitae at?"
-    }) 
+    })
+  NUM_COMMENTS.times do |j|
+    post.comments.create({
+        title: "Comment #{j} on #{post.title}",
+        author: "Person #{j}",
+        body: "Lorem ip sup some thing heh ahah"
+      })
+  end
 end
