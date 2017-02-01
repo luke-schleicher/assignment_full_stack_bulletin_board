@@ -21,7 +21,7 @@ BulletinBoard.config(function($stateProvider, $urlRouterProvider){
     .state('posts', {
       url: "/posts",
       templateUrl: "/templates/post.html",
-      controller: "PostsCtrl"
+      controller: "PostsIndexCtrl"
     });
 
 });
