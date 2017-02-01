@@ -1,7 +1,5 @@
 var BulletinBoard = angular.module('BulletinBoard', ['ui.router', 'restangular'])
 
-// TODO: left off with setup
-
 BulletinBoard.config(
   ["$httpProvider",
   function($httpProvider) {
@@ -20,8 +18,18 @@ BulletinBoard.config(function($stateProvider, $urlRouterProvider){
   $stateProvider
     .state('posts', {
       url: "/posts",
-      templateUrl: "/templates/post.html",
+      templateUrl: "/templates/posts.html",
       controller: "PostsIndexCtrl"
     });
 
 });
+
+BulletinBoard.config( ['RestangularProvider', function(RestangularProvider) {
+
+    RestangularProvider.setBaseUrl('/api/v1');
+    RestangularProvider.setRequestSuffix('.json');
+    RestangularProvider.setDefaultHttpFields({
+        "content-type": "application/json"
+    });
+
+}]);

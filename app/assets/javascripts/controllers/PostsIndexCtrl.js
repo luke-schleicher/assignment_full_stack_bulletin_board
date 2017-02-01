@@ -1,5 +1,14 @@
-BulletinBoard.controller('PostsIndexCtrl',['$scope', function($scope) {
+BulletinBoard.controller('PostsIndexCtrl',
 
-  $scope.post = "Hey there";
+  ['$scope', 'postService',
 
-}]);
+  function($scope, postService) {
+
+    postService.getPosts()
+      .then(function(posts) {
+        $scope.posts = posts;
+      })
+
+  }
+
+]);
