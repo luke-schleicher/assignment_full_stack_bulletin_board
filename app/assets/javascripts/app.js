@@ -18,8 +18,28 @@ BulletinBoard.config(function($stateProvider, $urlRouterProvider){
   $stateProvider
     .state('posts', {
       url: "/posts",
-      templateUrl: "/templates/posts.html",
+      views: {
+        'header': {
+          templateUrl: '/templates/posts/header.html',
+        },
+        'recent-comments': {
+          templateUrl: '/templates/posts/recent_comments.html',
+          controller: 'RecentCommentsCtrl'
+        },
+        'main': {
+          templateUrl: '/templates/posts/main.html'
+        }
+      }
+    })
+    .state('posts.index', {
+      url: "/index",
+      templateUrl: "/templates/posts/index.html",
       controller: "PostsIndexCtrl"
+    })
+    .state('posts.show', {
+      url: "/show/:id",
+      templateUrl: "/templates/posts/show.html",
+      controller: "PostsShowCtrl"
     });
 
 });
